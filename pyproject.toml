@@ -1,0 +1,39 @@
+[project]
+name = "talib-deployment"
+version = "0.1.0"
+description = "TA-Lib deployment with compatible NumPy and pandas versions"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+# Use uv for dependency management
+default-python = "3.10"
+
+[project.dependencies]
+ta-lib = "==0.6.3"
+flask = "==2.3.3"
+numpy = "==2.2.6"
+pandas = "==2.2.2"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pytest]
+testpaths = ["tests"]
