@@ -97,24 +97,11 @@ To develop locally without Docker, you'll need to:
    - **Linux**: See instructions in the Dockerfile
    - **Windows**: Download pre-built binaries from https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
 
-2. Install dependencies using either pip or uv:
-
-   **Option 1: Using pip with requirements.txt**
+2. Create a virtual environment and install dependencies:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
-   ```
-
-   **Option 2: Using uv with pyproject.toml (Recommended)**
-   ```bash
-   # Install uv if you don't have it
-   pip install uv
-   
-   # Create virtual environment and install dependencies
-   uv venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   uv pip install -e .
    ```
 
 3. Run the application:
